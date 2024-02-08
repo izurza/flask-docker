@@ -10,6 +10,6 @@ jobs:
             - uses: actions/checkout@v4
             - name: Build and push the image
               run: |
-                docker login --username izurza --password @{{ secrets.GH_PAT }} ghcr.io
+                docker login --username izurza --password ${{ secrets.GH_PAT }} ghcr.io
                 docker build . --tag ghcr.io/izurza/python-docker:latest
                 docker push ghcr.io/izurza/python-docker:latest
